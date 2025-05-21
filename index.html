@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instagram Mini Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="iphone-frame">
+    <div class="status-bar">
+      <div class="left-signal">
+        <span>📶</span><span>WiFi</span>
+      </div>
+      <div class="right-battery">
+        <span>🔋 85%</span>
+      </div>
+    </div>
+
+    <div class="header">Instagram</div>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+      <div class="stories">
+        <div class="story" onclick="playStory(this)">
+          <div class="story-inner"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiJEWNI1K7W58PCY6gMXe-nYrl7eq1550phw&s" alt="story" /></div>
+        </div>
+        <div class="story" onclick="playStory(this)">
+          <div class="story-inner"><img src="https://i.pinimg.com/originals/e1/77/47/e17747c78dd89a1d9522c5da154128b2.png" alt="story" /></div>
+        </div>
+        <div class="story" onclick="playStory(this)">
+          <div class="story-inner"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0qLGcgvukfBrXapX5aYYdRSxzK_ipKYMEww&s" alt="story" /></div>
+        </div>
+      </div>
+
+      <!-- Posts -->
+      <div class="post">
+        <div class="post-header">
+          <div class="avatar" style="background-image: url('https://i.pinimg.com/originals/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg');"></div>
+          <div class="username">m_dafaptra</div>
+        </div>
+        <div class="post-img" style="background-image: url('sunset.jpg"></div>
+        <div class="post-actions">
+          <span onclick="toggleLikeIcon(this)">♡</span><span>💬</span><span>✈️</span>
+        </div>
+        <div class="post-caption"><b>m_dafaptra</b> Loving this sunset view 🌅</div>
+      </div>
+
+      <div class="post">
+        <div class="post-header">
+          <div class="avatar" style="background-image: url('https://i.pinimg.com/originals/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg');"></div>
+          <div class="username">m_dafaptra</div>
+        </div>
+        <div class="post-img" style="background-image: url('sunset2.jpg"></div>
+        <div class="post-actions">
+          <span onclick="toggleLikeIcon(this)">♡</span><span>💬</span><span>✈️</span>
+        </div>
+        <div class="post-caption"><b>m_dafaptra</b> Weekend vibes 😎</div>
+      </div>
+    </div>
+
+    <!-- Search Page -->
+    <div id="search" class="page">
+      <input type="text" placeholder="Search" class="search-input" />
+      <div class="grid-gallery">
+        <div style="background-image:url('https://picsum.photos/id/1011/100/100')"></div>
+        <div style="background-image:url('https://picsum.photos/id/1012/100/100')"></div>
+        <div style="background-image:url('https://picsum.photos/id/1013/100/100')"></div>
+        <div style="background-image:url('https://picsum.photos/id/1014/100/100')"></div>
+        <div style="background-image:url('https://picsum.photos/id/1015/100/100')"></div>
+        <div style="background-image:url('https://picsum.photos/id/1016/100/100')"></div>
+      </div>
+    </div>
+
+    <!-- Create Post Page -->
+    <div id="create" class="page">
+      <h3>Create Post</h3>
+      <input type="file" id="fileInput" accept="image/*" />
+      <textarea id="captionInput" placeholder="Write a caption..."></textarea>
+      <button onclick="sharePost()">Share</button>
+      <div id="shareMessage"></div>
+    </div>
+
+    <!-- Reels Page -->
+    <div id="reels" class="page">
+      <h3>Reels</h3>
+      <div class="reels-container">
+        <video class="reel-video" src="video.mp4" controls muted></video>
+        <video class="reel-video" src="video2.mp4" controls muted></video>
+      </div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile" class="page">
+      <div class="profile-header">
+        <div class="avatar large" style="background-image: url('https://i.pinimg.com/originals/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg');"></div>
+        <div class="profile-info">
+          <h2>@m_dafaptra</h2>
+          <p>Posts: 2 | Followers: 28 | Following: 32</p>
+          <p>8 Letters</p>
+        </div>
+      </div>
+      <div class="grid-gallery profile-gallery">
+        <div style="background-image:url('sunset.jpg')"></div>
+        <div style="background-image:url('sunset2.jpg')"></div>
+      </div>
+    </div>
+
+    <div class="menu-bar">
+      <div class="menu-icon active" data-target="home" onclick="switchPage(this)">⌂</div>
+      <div class="menu-icon" data-target="search" onclick="switchPage(this)">🔍</div>
+      <div class="menu-icon" data-target="create" onclick="switchPage(this)">➕</div>
+      <div class="menu-icon" data-target="reels" onclick="switchPage(this)">🎬</div>
+      <div class="menu-icon" data-target="profile" onclick="switchPage(this)">👤</div>
+    </div>
+  </div>
+
+<!-- Modal Story -->
+<div id="storyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeStory()">&times;</span>
+    <img id="storyImage" src="" alt="Story" />
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
